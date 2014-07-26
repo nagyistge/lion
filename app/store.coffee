@@ -6,7 +6,7 @@ ApplicationAdapter = DS.ActiveModelAdapter.reopen
   namespace: 'api'
 
 ApplicationSerializer = DS.ActiveModelSerializer.extend
-  serialize: (record, options) ->
+  serialize: ->
     json = @_super.apply(this, arguments)
     delete json.created_at
     json
