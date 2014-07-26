@@ -8,6 +8,12 @@ App = Ember.Application.extend
   modulePrefix: 'lion'
   Resolver: Resolver
 
+  lookup: ->
+    @__container__.lookup.apply(@__container__, arguments)
+
+  ready: ->
+    Notify.requestPermission() if Notify.isSupported() && Notify.needsPermission()
+
 loadInitializers(App, 'lion')
 
 `export default App`

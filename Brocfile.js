@@ -20,4 +20,6 @@ var app = new EmberApp();
 app.import('vendor/pace/pace.js');
 app.import('vendor/pace/themes/blue/pace-theme-flash.css');
 
+app.import('vendor/notify.js/notify.js');
+
 module.exports = app.toTree();
