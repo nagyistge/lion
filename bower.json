@@ -13,6 +13,7 @@
     "ember-qunit-notifications": "^0.0.3",
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
     "pace": "~0.5.5",
-    "notify.js": "~1.2.2"
+    "notify.js": "~1.2.2",
+    "raven-js": "~1.1.16"
   }
 }

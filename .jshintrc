@@ -3,7 +3,8 @@
     "document": true,
     "window": true,
     "LionENV": true,
-    "Notify": true
+    "Notify": true,
+    "Raven": true
   },
   "browser" : true,
   "boss" : true,

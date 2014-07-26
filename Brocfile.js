@@ -21,5 +21,6 @@ app.import('vendor/pace/pace.js');
 app.import('vendor/pace/themes/blue/pace-theme-flash.css');
 
 app.import('vendor/notify.js/notify.js');
+app.import('vendor/raven-js/dist/raven.js')
 
 module.exports = app.toTree();
