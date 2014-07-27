@@ -19,8 +19,11 @@ var app = new EmberApp();
 
 app.import('vendor/pace/pace.js');
 app.import('vendor/pace/themes/blue/pace-theme-flash.css');
-
 app.import('vendor/notify.js/notify.js');
-app.import('vendor/raven-js/dist/raven.js')
+app.import('vendor/raven-js/dist/raven.js');
+app.import('vendor/jQuery-linkify/dist/jquery.linkify.js');
+app.import('vendor/foundation/js/foundation.js');
+app.import('vendor/foundation/js/foundation/foundation.dropdown.js');
+app.import('vendor/marked/lib/marked.js')
 
 module.exports = app.toTree();
