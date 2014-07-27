@@ -17,6 +17,7 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+app.import('vendor/moment/moment.js');
 app.import('vendor/pace/pace.js');
 app.import('vendor/pace/themes/blue/pace-theme-flash.css');
 app.import('vendor/notify.js/notify.js');
@@ -24,7 +25,7 @@ app.import('vendor/raven-js/dist/raven.js');
 app.import('vendor/jQuery-linkify/dist/jquery.linkify.js');
 app.import('vendor/foundation/js/foundation.js');
 app.import('vendor/foundation/js/foundation/foundation.dropdown.js');
-app.import('vendor/marked/lib/marked.js')
-app.import('vendor/ember-pushable/lib/ember-pushable.js')
+app.import('vendor/marked/lib/marked.js');
+app.import('vendor/ember-pushable/lib/ember-pushable.js');
 
 module.exports = app.toTree();

@@ -5,7 +5,8 @@
     "LionENV": true,
     "Notify": true,
     "Raven": true,
-    "marked": true
+    "marked": true,
+    "moment": true
   },
   "browser" : true,
   "boss" : true,
