@@ -27,5 +27,21 @@ app.import('vendor/foundation/js/foundation.js');
 app.import('vendor/foundation/js/foundation/foundation.dropdown.js');
 app.import('vendor/marked/lib/marked.js');
 app.import('vendor/ember-pushable/lib/ember-pushable.js');
+app.import('vendor/font-awesome/fonts/fontawesome-webfont.ttf', {
+  destDir: 'assets/fonts'
+});
+app.import('vendor/font-awesome/fonts/fontawesome-webfont.woff', {
+  destDir: 'assets/fonts'
+});
+app.import('vendor/font-awesome/fonts/fontawesome-webfont.svg', {
+  destDir: 'assets/fonts'
+});
+app.import('vendor/font-awesome/fonts/fontawesome-webfont.eot', {
+  destDir: 'assets/fonts'
+});
+app.import('vendor/zocial/css/zocial-regular-webfont.ttf', {
+  destDir: 'assets/fonts'
+});
+app.import('vendor/zocial/css/zocial.css');
 
 module.exports = app.toTree();

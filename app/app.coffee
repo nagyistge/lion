@@ -8,6 +8,7 @@
 `import EditTextArea from './views/edit-text-area'`
 
 Ember.MODEL_FACTORY_INJECTIONS = true
+Ember.null = null
 
 App = Ember.Application.extend
   modulePrefix: 'lion'
