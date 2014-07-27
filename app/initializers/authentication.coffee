@@ -13,7 +13,7 @@ Authentication =
     }
 
     onMessage = (event) ->
-      return if event.origin != 'http://localhost:3000'
+      return if event.origin != window.ENV.API_HOST
 
       if event.data.access_token?
         Ember.$(window).trigger('loginSucceeded', event.data)
