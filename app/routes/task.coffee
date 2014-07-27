@@ -1,5 +1,5 @@
 `import Ember from 'ember'`
-`import AuthenticatedRoute from './authenticated-route'`
+`import AuthenticatedRoute from './authenticated'`
 
 TaskRoute = AuthenticatedRoute.extend
   beforeModel: (transition) ->

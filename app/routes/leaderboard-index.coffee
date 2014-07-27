@@ -1,4 +1,4 @@
-`import AuthenticatedRoute from './authenticated-route'`
+`import AuthenticatedRoute from './authenticated'`
 
 LeaderboardIndexRoute = AuthenticatedRoute.extend
   beforeModel: (transition) ->

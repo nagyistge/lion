@@ -1,4 +1,4 @@
-`import AuthenticatedRoute from './authenticated-route'`
+`import AuthenticatedRoute from './authenticated'`
 
 IndexRoute = AuthenticatedRoute.extend
   beforeModel: (transition) ->
