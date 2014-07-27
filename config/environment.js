@@ -32,7 +32,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.PUSHER_OPTS = { key: 'e77a2360c4b77ba37065' };
-    ENV.API_HOST = 'https://as-lion-api.herokuapp.com';
+    ENV.API_HOST = 'https://as-lion.herokuapp.com';
   }
 
   return ENV;
