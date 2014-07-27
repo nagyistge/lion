@@ -2,7 +2,6 @@
 
 FromNowComponent = Ember.Component.extend
   tagName: 'time'
-  layout: Ember.Handlebars.compile('{{view.timeFromNowInWords}}')
 
   timeFromNowInWords: (->
     moment(@get('time')).fromNow()
