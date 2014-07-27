@@ -25,5 +25,6 @@ app.import('vendor/jQuery-linkify/dist/jquery.linkify.js');
 app.import('vendor/foundation/js/foundation.js');
 app.import('vendor/foundation/js/foundation/foundation.dropdown.js');
 app.import('vendor/marked/lib/marked.js')
+app.import('vendor/ember-pushable/lib/ember-pushable.js')
 
 module.exports = app.toTree();

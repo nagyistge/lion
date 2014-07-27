@@ -18,7 +18,8 @@
     "jQuery-linkify": "~1.1.6",
     "foundation": "~5.3.1",
     "marked": "~0.3.2",
-    "pusher": "~2.2.2"
+    "pusher": "~2.2.2",
+    "ember-pushable": "~1.1.0"
   },
   "resolutions": {
     "jquery": ">= 2.1.0"
