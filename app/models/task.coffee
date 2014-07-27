@@ -49,7 +49,7 @@ Task = DS.Model.extend(DS.Pushable, Creatable,
   ).observesBefore('assignee.id')
 
   notifyAssignment: ->
-    if @get('assignee.id') == @controllerFor('currentUser').get('id')
+    if @get('assignee.id') == @get('currentUser').get('id')
       new Notify('You have been assigned an issue', { body: @get('title') }).show()
 )
 
