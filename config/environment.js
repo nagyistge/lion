@@ -14,9 +14,6 @@ module.exports = function(environment) {
 
     APP: {
       PUSHER_OPTS: { key: 'b97fe1ecbf31373c3699' }
-    },
-    'simple-auth': {
-      authorizer: 'simple-auth-authorizer:oauth2-bearer'
     }
   };
 
@@ -26,6 +23,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API_HOST = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -33,7 +31,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.PUSHER_OPTS = { key: 'e77a2360c4b77ba37065' }
+    ENV.APP.PUSHER_OPTS = { key: 'e77a2360c4b77ba37065' };
+    ENV.API_HOST = 'https://as-lion-api.herokuapp.com';
   }
 
   return ENV;
