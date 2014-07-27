@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
 
-UserStats = Ember.CollectionView.extend(Ember.SortableMixin,
+UserStatsView = Ember.CollectionView.extend(Ember.SortableMixin,
   tagName: 'ul'
   classNames: ['ranking']
 
@@ -38,4 +38,4 @@ UserStats = Ember.CollectionView.extend(Ember.SortableMixin,
     ).observes('parentView.avatarUrlProperty').on('init')
 )
 
-`export default UserStats`
+`export default UserStatsView`

@@ -9,4 +9,4 @@ section.leaderboard
         link-to "leaderboard.all-time" tagName="dd"
           a All Time
 
-  Lion.UserStats content=controller pointsProperty="points" avatarUrlProperty="user.avatarUrl"
+  view "user-stats" content=controller pointsProperty="points" avatarUrlProperty="user.avatarUrl"

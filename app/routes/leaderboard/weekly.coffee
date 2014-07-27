@@ -1,4 +1,4 @@
-`import AuthenticatedRoute from './authenticated'`
+`import AuthenticatedRoute from '../authenticated'`
 
 LeaderboardWeeklyRoute = AuthenticatedRoute.extend
   setupController: ->

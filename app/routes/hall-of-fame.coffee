@@ -1,5 +1,7 @@
 `import AuthenticatedRoute from './authenticated'`
 
-BadgesRoute = AuthenticatedRoute.extend()
+HallOfFameRoute = AuthenticatedRoute.extend
+  model: ->
+    @store.find('weeklyWinning')
 
-`export default BadgesRoute`
+`export default HallOfFameRoute`
