@@ -1,6 +1,9 @@
 `import Ember from 'ember'`
 `import Resolver from 'ember/resolver'`
 `import loadInitializers from 'ember/load-initializers'`
+`import formattedDate from './helpers/formatted-date'`
+`import pluralize from './helpers/pluralize'`
+`import markdown from './helpers/markdown'`
 
 Ember.MODEL_FACTORY_INJECTIONS = true
 
@@ -17,6 +20,10 @@ App = Ember.Application.extend
 Raven.config('https://552d73bcf3804b9a8dd7748984e70235@app.getsentry.com/23433', {
   whitelistUrls: ['as-lion.herokuapp.com']
 }).install()
+
+Ember.Handlebars.registerBoundHelper('formattedDate', formattedDate)
+Ember.Handlebars.registerBoundHelper('pluralize', pluralize)
+Ember.Handlebars.registerBoundHelper('markdown', markdown)
 
 loadInitializers(App, 'lion')
 

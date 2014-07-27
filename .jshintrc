@@ -6,7 +6,8 @@
     "Notify": true,
     "Raven": true,
     "marked": true,
-    "moment": true
+    "moment": true,
+    "hljs": true
   },
   "browser" : true,
   "boss" : true,
