@@ -1,6 +1,7 @@
 `import Ember from 'ember'`
+`import Base from 'simple-auth-oauth2/authenticators/oauth2'`
 
-OmniauthAuthenticator = Ember.SimpleAuth.Authenticators.OAuth2.extend
+OmniauthAuthenticator = Base.extend
   authenticate: ->
     new Ember.RSVP.Promise((resolve, reject) ->
       window.open(
