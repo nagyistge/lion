@@ -13,8 +13,7 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      PUSHER_OPTS: { key: 'b97fe1ecbf31373c3699' }
     },
     'simple-auth': {
       authorizer: 'simple-auth-authorizer:oauth2-bearer'
@@ -34,7 +33,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.PUSHER_OPTS = { key: 'e77a2360c4b77ba37065' }
   }
 
   return ENV;
