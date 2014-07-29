@@ -26,3 +26,7 @@ section.stats
 
     view "user-stats" content=deletionStats pointsProperty="numberOfDeletions" avatarUrlProperty="avatarUrl"
 
+  section.badges
+    h3 Badges
+
+    view "user-stats" content=badgeStats pointsProperty="badgesCount" avatarUrlProperty="avatarUrl"
