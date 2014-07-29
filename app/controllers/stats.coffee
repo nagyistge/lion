@@ -12,6 +12,6 @@ StatsController = Ember.ArrayController.extend
   deletionStats: Ember.computed.sort('content', 'deletionsSorting')
   reviewStats: Ember.computed.sort('content', 'reviewsSorting')
   completedTasksStats: Ember.computed.sort('content', 'completedTasksSorting')
-  badgesStats: Ember.computed.sort('content', 'badgesSorting')
+  badgeStats: Ember.computed.sort('content', 'badgesSorting')
 
 `export default StatsController`
