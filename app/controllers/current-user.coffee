@@ -3,7 +3,7 @@
 
 CurrentUserController = Ember.ObjectController.extend
   sync: ->
-    Ember.$.getJSON("#{window.ENV.API_HOST}/api/users/me").then((data) =>
+    Ember.$.getJSON("#{window.ENV.API_URL}/api/users/me").then((data) =>
       @store.pushPayload(data)
       @set('content', @store.getById('user', data.user.id))
     )

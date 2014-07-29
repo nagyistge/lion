@@ -9,11 +9,11 @@ Authentication =
 
     window.ENV['simple-auth'] = {
       authorizer: 'simple-auth-authorizer:oauth2-bearer'
-      crossOriginWhitelist: [window.ENV.API_HOST]
+      crossOriginWhitelist: [window.ENV.API_URL]
     }
 
     onMessage = (event) ->
-      return if event.origin != window.ENV.API_HOST
+      return if event.origin != window.ENV.API_URL
 
       if event.data.access_token?
         Ember.$(window).trigger('loginSucceeded', event.data)

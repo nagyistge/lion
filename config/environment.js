@@ -23,7 +23,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.API_HOST = 'http://localhost:3000';
+    ENV.API_URL = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -32,7 +32,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.PUSHER_OPTS = { key: 'e77a2360c4b77ba37065' };
-    ENV.API_HOST = 'https://as-lion-api.herokuapp.com';
+    ENV.API_URL = 'https://as-lion-api.herokuapp.com';
   }
 
   return ENV;
