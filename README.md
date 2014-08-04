@@ -1,6 +1,9 @@
 # Lion
 
-This README outlines the details of collaborating on this Ember application.
+Lion is a dashboard for developers written with Ember and Rails.
+It rewards developers when they get shit done®.
+
+This is the web client. [Here](https://github.com/alphasights/lion-api) you can find the API.
 
 ## Installation
 
@@ -22,4 +25,22 @@ This README outlines the details of collaborating on this Ember application.
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
+## Tasks
+
+![tasks](http://cl.ly/image/3x3d3W2t2y3l/tasks.png)
+
+## Comments
+
+![task_with_comments](http://cl.ly/image/2n3Y0p1i163H/task_with_comment.png)
+
+## Leaderboard
+
+![leaderboard](http://cl.ly/image/033t1x3t041b/leaderboard.png)
+
+## Hall of Fame
+
+![hall-of-fame](http://cl.ly/image/020f0o420b2i/hall-of-fame.png)
+
+## Stats
+
+![stats](http://cl.ly/image/3R3W2e2c0Y2p/stats.png)
