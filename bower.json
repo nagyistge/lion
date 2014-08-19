@@ -5,7 +5,8 @@
     "jquery": "^1.11.1",
     "qunit": "~1.12.0",
     "ember-qunit": "~0.1.8",
-    "ember": "1.7.0-beta.1",
+    "ember": "components/ember#canary",
+    "ember-data": "components/ember-data#canary",
     "ember-resolver": "~0.1.5",
     "loader": "stefanpenner/loader.js#1.0.0",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.2",
@@ -16,7 +17,7 @@
     "notify.js": "~1.2.2",
     "raven-js": "~1.1.16",
     "jQuery-linkify": "~1.1.6",
-    "foundation": "~5.3.1",
+    "foundation": "5.3.1",
     "marked": "~0.3.2",
     "pusher": "~2.2.2",
     "ember-pushable": "~1.1.0",
@@ -26,6 +27,8 @@
     "font-awesome": "~4.1.0"
   },
   "resolutions": {
-    "jquery": ">= 1.7.0 <= 2.1.0"
+    "jquery": ">= 1.7.0 <= 2.1.0",
+    "ember": "canary",
+    "ember-data": "canary"
   }
 }
