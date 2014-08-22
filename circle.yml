@@ -5,5 +5,5 @@ machine:
 deployment:
   production:
     branch: master
-    heroku:
-      appname: as-lion
+    commands:
+      - "git push --force git@heroku.com:as-lion.git HEAD:master"
