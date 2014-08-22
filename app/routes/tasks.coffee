@@ -2,7 +2,7 @@
 
 TasksRoute = AuthenticatedRoute.extend
   beforeModel: (transition) ->
-    Notify.requestPermission() if Notify.isSupported() && Notify.needsPermission()
+    Notify.requestPermission() if Notify.isSupported && Notify.needsPermission
 
     @store.find('user').then((users) =>
       @controllerFor('tasks').set('users', users)

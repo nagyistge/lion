@@ -15,7 +15,7 @@ App = Ember.Application.extend
   Resolver: Resolver
 
   ready: ->
-    Notify.requestPermission() if Notify.isSupported() && Notify.needsPermission()
+    Notify.requestPermission() if Notify.isSupported && Notify.needsPermission
 
 Raven.config('https://552d73bcf3804b9a8dd7748984e70235@app.getsentry.com/23433', {
   whitelistUrls: ['as-lion.herokuapp.com']
