@@ -2,6 +2,9 @@
 `import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin'`
 
 ApplicationRoute = Ember.Route.extend(ApplicationRouteMixin,
+  beforeModel: ->
+    @controllerFor('currentUser').sync()
+
   actions:
     authenticateSession: ->
       @get('session').authenticate('authenticator:omniauth')
