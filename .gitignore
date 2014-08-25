@@ -1,7 +1,7 @@
 /dist
 /tmp
 /node_modules
-/vendor/*
+/bower_components/*
 /.sass-cache
 /connect.lock
 /coverage/*
