@@ -9,9 +9,8 @@ CurrentUserController = Ember.ObjectController.extend
       @store.push('user', currentUser)
       @set('model', @store.getById('user', currentUser.id))
     else
-      Ember.$.getJSON("#{window.ENV.API_URL}/api/users/me").then((data) =>
-        @store.pushPayload(data)
-        @set('model', @store.getById('user', data.user.id))
+      @store.find('user', 'me').then((user) =>
+        @set('model', @store.getById('user', user.id))
       )
 
   logout: ->
