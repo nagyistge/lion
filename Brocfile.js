@@ -17,31 +17,31 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-app.import('vendor/moment/moment.js');
-app.import('vendor/pace/pace.js');
-app.import('vendor/pace/themes/blue/pace-theme-flash.css');
-app.import('vendor/notify.js/notify.js');
-app.import('vendor/raven-js/dist/raven.js');
-app.import('vendor/jQuery-linkify/dist/jquery.linkify.js');
-app.import('vendor/foundation/js/foundation.js');
-app.import('vendor/foundation/js/foundation/foundation.dropdown.js');
-app.import('vendor/marked/lib/marked.js');
-app.import('vendor/ember-pushable/lib/ember-pushable.js');
-app.import('vendor/font-awesome/fonts/fontawesome-webfont.ttf', {
+app.import('bower_components/moment/moment.js');
+app.import('bower_components/pace/pace.js');
+app.import('bower_components/pace/themes/blue/pace-theme-flash.css');
+app.import('bower_components/notify.js/notify.js');
+app.import('bower_components/raven-js/dist/raven.js');
+app.import('bower_components/jQuery-linkify/dist/jquery.linkify.js');
+app.import('bower_components/foundation/js/foundation.js');
+app.import('bower_components/foundation/js/foundation/foundation.dropdown.js');
+app.import('bower_components/marked/lib/marked.js');
+app.import('bower_components/ember-pushable/lib/ember-pushable.js');
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
   destDir: 'assets/fonts'
 });
-app.import('vendor/font-awesome/fonts/fontawesome-webfont.woff', {
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', {
   destDir: 'assets/fonts'
 });
-app.import('vendor/font-awesome/fonts/fontawesome-webfont.svg', {
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', {
   destDir: 'assets/fonts'
 });
-app.import('vendor/font-awesome/fonts/fontawesome-webfont.eot', {
+app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot', {
   destDir: 'assets/fonts'
 });
-app.import('vendor/zocial/css/zocial-regular-webfont.ttf', {
+app.import('bower_components/zocial/css/zocial-regular-webfont.ttf', {
   destDir: 'assets/fonts'
 });
-app.import('vendor/zocial/css/zocial.css');
+app.import('bower_components/zocial/css/zocial.css');
 
 module.exports = app.toTree();

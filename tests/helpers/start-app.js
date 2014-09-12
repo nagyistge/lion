@@ -1,8 +1,6 @@
-/* global require */
-
-var Application = require('lion/app')['default'];
-var Router = require('lion/router')['default'];
 import Ember from 'ember';
+import Application from 'lion/app';
+import Router from 'lion/router';
 
 export default function startApp(attrs) {
   var App;
