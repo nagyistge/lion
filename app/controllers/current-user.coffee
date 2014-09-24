@@ -11,7 +11,7 @@ CurrentUserController = Ember.ObjectController.extend
     else
       @store.find('user', 'me').then((user) =>
         @set('model', @store.getById('user', user.id))
-      )
+      , =>)
 
   logout: ->
     @set('model', null)

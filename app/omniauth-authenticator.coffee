@@ -10,11 +10,13 @@ OmniauthAuthenticator = Base.extend
       )
 
       Ember.$(window).on('loginSucceeded', (event, user) ->
-        resolve({ access_token: user.access_token })
+        Ember.run ->
+          resolve({ access_token: user.access_token })
       )
 
       Ember.$(window).on('loginFailed', (event, errors) ->
-        reject(errors)
+        Ember.run ->
+          reject(errors)
       )
     )
 
