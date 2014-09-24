@@ -8,7 +8,7 @@ CurrentUserController = Ember.ObjectController.extend
     if !Ember.isEmpty(currentUser)
       @store.push('user', currentUser)
       @set('model', @store.getById('user', currentUser.id))
-    else
+    else if @get('session.isAuthenticated')
       @store.find('user', 'me').then((user) =>
         @set('model', @store.getById('user', user.id))
       , =>)
