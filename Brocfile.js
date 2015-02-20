@@ -39,9 +39,5 @@ app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', {
 app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot', {
   destDir: 'assets/fonts'
 });
-app.import('bower_components/zocial/css/zocial-regular-webfont.ttf', {
-  destDir: 'assets/fonts'
-});
-app.import('bower_components/zocial/css/zocial.css');
 
 module.exports = app.toTree();
