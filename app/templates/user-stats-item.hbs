@@ -1,0 +1,13 @@
+<div class="description">
+  <div class="profile-picture"
+    <img class="big-avatar" {{bind-attr src=view.avatarUrl}}/>
+  </div>
+</div>
+
+<div class="bar">
+  <span class="points">{{view.points}}</span>
+
+  <div class="progress">
+    <span class="meter" {{bind-attr style=view.progressBarStyle}}></span>
+  </div>
+</div>

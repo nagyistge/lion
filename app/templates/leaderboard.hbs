@@ -1,0 +1,19 @@
+<section class="leaderboard">
+  <header>
+    <h1>Leaderboard</h1>
+
+    <div class="filters">
+      <dl>
+        {{#link-to "leaderboard.weekly" tagName="dd"}}
+          <a>Weekly</a>
+        {{/link-to}}
+
+        {{#link-to "leaderboard.all-time" tagName="dd"}}
+          <a>All Time</a>
+        {{/link-to}}
+      </dl>
+    </div>
+  </header>
+</section>
+
+{{view "user-stats" content=controller pointsProperty="points" avatarUrlProperty="user.avatarUrl"}}

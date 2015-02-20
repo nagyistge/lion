@@ -1,7 +1,8 @@
 `import DS from 'ember-data'`
+`import config from 'lion/config/environment'`
 
 ApplicationAdapter = DS.ActiveModelAdapter.extend
-  host: window.ENV.API_URL
+  host: config.API_URL
   namespace: 'api'
 
 `export default ApplicationAdapter`

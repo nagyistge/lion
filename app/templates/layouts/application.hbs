@@ -1,0 +1,45 @@
+<aside>
+  <div class="profile-picture">
+    <img {{bind-attr src=currentUser.avatarUrl}}/>
+  </div>
+
+  <nav>
+    <ul>
+      {{#link-to "tasks" tagName="li"}}
+        <i class="fa fa-check-circle"></i>
+        <br>
+        Tasks
+      {{/link-to}}
+
+      {{#link-to "leaderboard" tagName="li"}}
+        <i class="fa fa-sort-amount-desc"></i>
+        <br>
+        Leaderboard
+      {{/link-to}}
+
+      {{#link-to "hall-of-fame" tagName="li"}}
+        <i class="fa fa-trophy"></i>
+        <br>
+        Hall of Fame
+      {{/link-to}}
+
+      {{#link-to "stats" tagName="li"}}
+        <i class="fa fa-bar-chart-o"></i>
+        <br>
+        Stats
+      {{/link-to}}
+      
+      <li {{action "invalidateSession"}}>
+        <i class="fa fa-sign-out"></i>
+        <br>
+        Logout
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <div class="content">
+    {{outlet}}
+  </div>
+</main>

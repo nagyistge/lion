@@ -1,5 +1,6 @@
 `import Ember from 'ember'`
 `import OmniauthAuthenticator from '../omniauth-authenticator'`
+`import config from 'lion/config/environment'`
 
 Authentication =
   name: 'authentication'
@@ -7,13 +8,13 @@ Authentication =
   initialize: (container) ->
     container.register('authenticator:omniauth', OmniauthAuthenticator)
 
-    window.ENV['simple-auth'] = {
+    config['simple-auth'] = {
       authorizer: 'simple-auth-authorizer:oauth2-bearer'
-      crossOriginWhitelist: [window.ENV.API_URL]
+      crossOriginWhitelist: [config.API_URL]
     }
 
     onMessage = (event) ->
-      return if event.origin != window.ENV.API_URL
+      return if event.origin != config.API_URL
 
       if event.data.access_token?
         Ember.$(window).trigger('loginSucceeded', event.data)

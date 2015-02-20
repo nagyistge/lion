@@ -1,0 +1,38 @@
+<section class="stats">
+  <h1>Stats</h1>
+
+  <section class="pull-requests">
+    <h3>Pull Requests</h3>
+
+    {{view "user-stats" content=pullRequestStats pointsProperty="pullRequestsCount" avatarUrlProperty="avatarUrl"}}
+  </section>
+
+  <section class="reviews">
+    <h3>Reviews</h3>
+
+    {{view "user-stats" content=reviewStats pointsProperty="pullRequestReviewsCount" avatarUrlProperty="avatarUrl"}}
+  </section>
+
+  <section class="tasks">
+    <h3>Completed Tasks</h3>
+
+    {{view "user-stats" content=completedTasksStats pointsProperty="completedTasksCount" avatarUrlProperty="avatarUrl"}}
+
+  <section class="additions">
+    <h3>Additions</h3>
+
+    {{view "user-stats" content=additionStats pointsProperty="numberOfAdditions" avatarUrlProperty="avatarUrl"}}
+  </section>
+
+  <section class="deletions">
+    <h3>Deletions</h3>
+
+    {{view "user-stats" content=deletionStats pointsProperty="numberOfDeletions" avatarUrlProperty="avatarUrl"}}
+  </section>
+
+  <section class="badges">
+    <h3>Badges</h3>
+
+    {{view "user-stats" content=badgeStats pointsProperty="badgesCount" avatarUrlProperty="avatarUrl"}}
+  </section>
+</section>
