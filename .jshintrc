@@ -1,17 +1,17 @@
 {
-  "predef": {
-    "document": true,
-    "window": true,
-    "-Promise": true,
-    "LionENV": true,
-    "Notify": true,
-    "Raven": true,
-    "marked": true,
-    "moment": true,
-    "hljs": true
-  },
-  "browser" : true,
-  "boss" : true,
+  "predef": [
+    "document",
+    "window",
+    "-Promise",
+    "LionENV",
+    "Notify",
+    "Raven",
+    "marked",
+    "moment",
+    "hljs"
+  ],
+  "browser": true,
+  "boss": true,
   "curly": true,
   "debug": false,
   "devel": true,

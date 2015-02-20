@@ -1,5 +1,6 @@
 `import Ember from 'ember'`
 `import Resolver from 'ember/resolver'`
+`import config from './config/environment'`
 `import loadInitializers from 'ember/load-initializers'`
 `import formattedDate from './helpers/formatted-date'`
 `import pluralize from './helpers/pluralize'`
@@ -11,7 +12,8 @@ Ember.MODEL_FACTORY_INJECTIONS = true
 Ember.null = null
 
 App = Ember.Application.extend
-  modulePrefix: 'lion'
+  modulePrefix: config.modulePrefix,
+  podModulePrefix: config.podModulePrefix,
   Resolver: Resolver
 
   ready: ->
