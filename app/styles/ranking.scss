@@ -1,0 +1,20 @@
+.ranking {
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .points {
+    font-size: 20px;
+    z-index: 100;
+    font-weight: bold;
+  }
+
+  .meter {
+    @include linear-gradient(to right, lighten($progress-meter-color, 40%), $progress-meter-color);
+  }
+
+  .bar {
+    margin-top: 10px;
+    position: relative;
+  }
+}
