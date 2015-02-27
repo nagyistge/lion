@@ -17,6 +17,14 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       PUSHER_OPTS: { key: 'b97fe1ecbf31373c3699' }
+    },
+
+    torii: {
+      providers: {
+        'github-oauth2': {
+          scope: 'user:email'
+        }
+      }
     }
   };
 
@@ -26,6 +34,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API_HOST = 'http://localhost:3000'
+    ENV.torii.providers['github-oauth2'].apiKey = '89b25efb23bf241601c0';
   }
 
   if (environment === 'test') {
@@ -42,8 +52,18 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.PUSHER_OPTS = { key: 'e77a2360c4b77ba37065' };
-    ENV.API_URL = 'https://as-lion-api.herokuapp.com';
+    ENV.API_HOST = 'https://as-lion-api.herokuapp.com';
+    ENV.torii.providers['github-oauth2'].apiKey = '743d8bfa4937e587f1f4';
   }
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:oauth2-bearer',
+    crossOriginWhitelist: [ENV.API_HOST]
+  };
+
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint: ENV.API_HOST + '/api/v1/token'
+  };
 
   return ENV;
 };
