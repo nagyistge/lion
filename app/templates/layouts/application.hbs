@@ -5,12 +5,6 @@
 
   <nav>
     <ul>
-      {{#link-to "tasks" tagName="li"}}
-        <i class="fa fa-check-circle"></i>
-        <br>
-        Tasks
-      {{/link-to}}
-
       {{#link-to "leaderboard" tagName="li"}}
         <i class="fa fa-sort-amount-desc"></i>
         <br>
@@ -28,7 +22,7 @@
         <br>
         Stats
       {{/link-to}}
-      
+
       <li {{action "invalidateSession"}}>
         <i class="fa fa-sign-out"></i>
         <br>
