@@ -62,7 +62,7 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint: ENV.API_HOST + '/api/v1/token'
+    serverTokenEndpoint: ENV.API_HOST + '/auth/github/callback'
   };
 
   return ENV;
