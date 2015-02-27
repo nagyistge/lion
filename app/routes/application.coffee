@@ -6,8 +6,13 @@ ApplicationRoute = Ember.Route.extend(ApplicationRouteMixin,
     @controllerFor('currentUser').sync()
 
   actions:
-    authenticateSession: ->
-      @get('session').authenticate('authenticator:omniauth')
+    authenticate: (provider) ->
+      @get('session').authenticate('authenticator:torii-oauth2', {
+        torii: this.get('torii'),
+        provider: provider
+      }, (error) ->
+        alert('There was an error when trying to sign you in: ' + error)
+      )
 
     sessionAuthenticationSucceeded: ->
       @_super.apply(this, arguments)
