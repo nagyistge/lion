@@ -14,7 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       }, function(error) {
         alert('There was an error when trying to sign you in: ' + error);
       });
-    }
+    },
 
     sessionAuthenticationSucceeded: function() {
       this._super.apply(this, arguments);
