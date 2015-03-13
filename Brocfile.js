@@ -20,7 +20,6 @@ var app = new EmberApp();
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/pace/pace.js');
 app.import('bower_components/pace/themes/blue/pace-theme-flash.css');
-app.import('bower_components/notify.js/notify.js');
 app.import('bower_components/foundation/js/foundation.js');
 app.import('bower_components/foundation/js/foundation/foundation.dropdown.js');
 app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {

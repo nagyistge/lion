@@ -4,11 +4,7 @@
     "window",
     "-Promise",
     "LionENV",
-    "Notify",
-    "Raven",
-    "marked",
-    "moment",
-    "hljs"
+    "moment"
   ],
   "browser": true,
   "boss": true,
