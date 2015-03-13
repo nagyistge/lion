@@ -16,7 +16,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      PUSHER_OPTS: { key: 'b97fe1ecbf31373c3699' }
     },
 
     torii: {
@@ -25,6 +24,16 @@ module.exports = function(environment) {
           scope: 'user:email'
         }
       }
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline'",
+      'font-src': "'self' data: cloud.typography.com",
+      'connect-src': "'self'",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' cloud.typography.com",
+      'media-src': "'self'"
     }
   };
 
@@ -51,7 +60,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.PUSHER_OPTS = { key: 'e77a2360c4b77ba37065' };
     ENV.API_HOST = 'https://as-lion-api.herokuapp.com';
     ENV.torii.providers['github-oauth2'].apiKey = '743d8bfa4937e587f1f4';
   }

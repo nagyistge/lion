@@ -21,12 +21,8 @@ app.import('bower_components/moment/moment.js');
 app.import('bower_components/pace/pace.js');
 app.import('bower_components/pace/themes/blue/pace-theme-flash.css');
 app.import('bower_components/notify.js/notify.js');
-app.import('bower_components/raven-js/dist/raven.js');
-app.import('bower_components/jQuery-linkify/dist/jquery.linkify.js');
 app.import('bower_components/foundation/js/foundation.js');
 app.import('bower_components/foundation/js/foundation/foundation.dropdown.js');
-app.import('bower_components/marked/lib/marked.js');
-app.import('bower_components/ember-pushable/lib/ember-pushable.js');
 app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
   destDir: 'assets/fonts'
 });
