@@ -18,21 +18,5 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 app.import('bower_components/moment/moment.js');
-app.import('bower_components/pace/pace.js');
-app.import('bower_components/pace/themes/blue/pace-theme-flash.css');
-app.import('bower_components/foundation/js/foundation.js');
-app.import('bower_components/foundation/js/foundation/foundation.dropdown.js');
-app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
-  destDir: 'assets/fonts'
-});
-app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', {
-  destDir: 'assets/fonts'
-});
-app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', {
-  destDir: 'assets/fonts'
-});
-app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot', {
-  destDir: 'assets/fonts'
-});
 
 module.exports = app.toTree();
