@@ -10,13 +10,7 @@ Ember.null = null;
 var App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
-  Resolver: Resolver,
-
-  ready: function() {
-    if (Notify.isSupported && Notify.needsPermission) {
-      Notify.requestPermission();
-    }
-  }
+  Resolver: Resolver
 });
 
 loadInitializers(App, 'lion');
