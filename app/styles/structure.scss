@@ -1,6 +1,6 @@
 form.inline {
   @include grid-row;
-  
+
   .input {
     @include grid-column($columns: 9, $collapse: true);
   }
@@ -21,24 +21,6 @@ main > .content {
 
 section.hall-of-fame, section.leaderboard {
   @include grid-column($columns: 8);
-}
-
-section.tasks {
-  & > header {
-    @include grid-row;
-
-    & > div {
-      @include grid-column($columns: 7);
-    }
-  }
-
-  & > section.content {
-    @include grid-row($behavior: nest);
-
-    & > ul {
-      @include grid-column($columns: 7);
-    }
-  }
 }
 
 section.stats {

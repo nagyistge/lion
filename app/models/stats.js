@@ -9,6 +9,5 @@ export default User.extend({
   numberOfAdditions: DS.attr('number'),
   numberOfDeletions: DS.attr('number'),
   pullRequestReviewsCount: DS.attr('number'),
-  completedTasksCount: DS.attr('number'),
   badgesCount: DS.attr('number')
 });

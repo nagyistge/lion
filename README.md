@@ -25,14 +25,6 @@ This is the web client. [Here](https://github.com/alphasights/lion-api) you can 
 
 * `ember build`
 
-## Tasks
-
-![tasks](http://cl.ly/image/3x3d3W2t2y3l/tasks.png)
-
-## Comments
-
-![task_with_comments](http://cl.ly/image/2n3Y0p1i163H/task_with_comment.png)
-
 ## Leaderboard
 
 ![leaderboard](http://cl.ly/image/033t1x3t041b/leaderboard.png)
