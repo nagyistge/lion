@@ -4,6 +4,7 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 export default Ember.Route.extend(ApplicationRouteMixin, {
   beforeModel: function() {
     this.controllerFor('currentUser').sync();
+    this._super.apply(this, arguments);
   },
 
   actions: {
@@ -11,7 +12,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.get('session').authenticate('authenticator:torii-oauth2', {
         torii: this.get('torii'),
         provider: provider
-      }, function(error) {
+      }).then(function() {}, function(error) {
         alert('There was an error when trying to sign you in: ' + error);
       });
     },
