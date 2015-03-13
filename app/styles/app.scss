@@ -95,9 +95,10 @@ aside {
   left: 0;
   height: 100%;
   overflow-y: scroll;
-  
+
   .profile-picture {
     padding: 1em;
+
     img {
       border: 2px solid $active-white;
     }
@@ -106,6 +107,7 @@ aside {
 
 .profile-picture {
   img {
+    width: 100%;
     border-radius: 50%;
   }
 }
