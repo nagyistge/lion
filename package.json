@@ -36,7 +36,7 @@
     "ember-cli-uglify": "1.0.1",
     "ember-data": "1.0.0-beta.15",
     "ember-export-application-global": "1.0.2",
-    "ember-rl-dropdown": "file:../../../../../var/folders/m7/jnjr06h116zb95mkfstplcfw0000gn/T/npm-23274-5d027f5b/git-cache-e1052aac0d59/e44a0f14a2518ba7675f3ba95d3a14cf38548c88",
+    "ember-rl-dropdown": "git+https://git@github.com/alphasights/ember-rl-dropdown.git",
     "liquid-fire": "0.17.1",
     "torii": "0.2.2"
   }
