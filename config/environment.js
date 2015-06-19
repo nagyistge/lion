@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -21,9 +22,15 @@ module.exports = function(environment) {
     torii: {
       providers: {
         'github-oauth2': {
-          scope: 'user:email'
+          scope: 'user:email,read:org'
         }
       }
+    },
+
+    'simple-auth': {
+      authenticationRoute: 'session',
+      routeAfterAuthentication: 'index',
+      authorizer: 'simple-auth-authorizer:oauth2-bearer'
     },
 
     contentSecurityPolicy: {
@@ -43,7 +50,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.API_HOST = 'http://localhost:3000'
+    ENV.apiBaseUrl = 'http://localhost:3000';
     ENV.torii.providers['github-oauth2'].apiKey = '89b25efb23bf241601c0';
   }
 
@@ -60,17 +67,14 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.API_HOST = 'https://as-lion-api.herokuapp.com';
+    ENV.apiBaseUrl = 'https://as-lion-api.herokuapp.com';
     ENV.torii.providers['github-oauth2'].apiKey = '743d8bfa4937e587f1f4';
   }
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:oauth2-bearer',
-    crossOriginWhitelist: [ENV.API_HOST]
-  };
+  ENV['simple-auth'].crossOriginWhitelist = [ENV.apiBaseUrl];
 
   ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint: ENV.API_HOST + '/api/tokens'
+    serverTokenEndpoint: ENV.apiBaseUrl + '/api/tokens'
   };
 
   return ENV;

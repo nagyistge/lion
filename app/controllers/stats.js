@@ -1,14 +1,17 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
-  pullRequestsSorting: ['pullRequestsCount:desc'],
-  additionsSorting: ['numberOfAdditions:desc'],
-  deletionsSorting: ['numberOfDeletions:desc'],
-  reviewsSorting: ['pullRequestReviewsCount:desc'],
-  badgesSorting: ['badgesCount:desc'],
-  pullRequestStats: Ember.computed.sort('content', 'pullRequestsSorting'),
-  additionStats: Ember.computed.sort('content', 'additionsSorting'),
-  deletionStats: Ember.computed.sort('content', 'deletionsSorting'),
-  reviewStats: Ember.computed.sort('content', 'reviewsSorting'),
-  badgeStats: Ember.computed.sort('content', 'badgesSorting')
+export default Ember.Controller.extend({
+  model: null,
+
+  pullRequestStats: Ember.computed.sort('model', '_pullRequestsSorting'),
+  additionStats: Ember.computed.sort('model', '_additionsSorting'),
+  deletionStats: Ember.computed.sort('model', '_deletionsSorting'),
+  reviewStats: Ember.computed.sort('model', '_reviewsSorting'),
+  badgeStats: Ember.computed.sort('model', '_badgesSorting'),
+
+  _pullRequestsSorting: ['pullRequestsCount:desc'],
+  _additionsSorting: ['numberOfAdditions:desc'],
+  _deletionsSorting: ['numberOfDeletions:desc'],
+  _reviewsSorting: ['pullRequestReviewsCount:desc'],
+  _badgesSorting: ['badgesCount:desc']
 });

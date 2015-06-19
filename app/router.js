@@ -6,15 +6,14 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('login');
-
-  this.resource('leaderboard', function() {
-    this.route('all-time');
-    return this.route('weekly');
+  this.route('authenticated', { path: '' }, function() {
+    this.resource('index', { path: '/' });
+    this.resource('leaderboard', { path: '/leaderboard/:time_span' });
+    this.resource('hall-of-fame');
+    this.resource('stats');
   });
 
-  this.route('hall-of-fame');
-  this.route('stats');
+  this.route('session');
 });
 
 export default Router;

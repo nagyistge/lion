@@ -1,39 +1,52 @@
 import Ember from 'ember';
 import OAuth2 from 'simple-auth-oauth2/authenticators/oauth2';
+import _ from 'npm:lodash';
 
 export default OAuth2.extend({
   authenticate: function(options) {
-    return this.fetchOauthData(options).then(this.fetchAccessToken.bind(this));
+    return this._fetchOauthData(options).then(this._fetchAccessToken.bind(this));
   },
 
-  fetchAccessToken: function(oauthCredentials) {
-    var _this = this;
+  _fetchAccessToken: function(oauthCredentials) {
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      this.makeRequest(this.get('serverTokenEndpoint'), oauthCredentials).then((response) => {
+        Ember.run(() => {
+          var expiresAt = this.absolutizeExpirationTime(response.expires_in);
 
-    return new Ember.RSVP.Promise(function(resolve, reject) {
-      _this.makeRequest(_this.serverTokenEndpoint, oauthCredentials).then(function(response) {
-        Ember.run(function() {
-          var expiresAt = _this.absolutizeExpirationTime(response.expires_in);
-          _this.scheduleAccessTokenRefresh(response.expires_in, expiresAt, response.refresh_token);
-          resolve(Ember.$.extend(response, { expires_at: expiresAt }));
+          this.scheduleAccessTokenRefresh(
+            response.expires_in,
+            expiresAt,
+            response.refresh_token
+          );
+
+          resolve(_({}).extend(response, { expires_at: expiresAt }));
         });
       }, function(xhr) {
-        Ember.run(function() {
-          reject(xhr.responseJSON || xhr.responseText);
+        Ember.run(() => {
+          var error;
+
+          if (xhr.responseJSON != null) {
+            error = xhr.responseJSON;
+          } else {
+            error = xhr.responseText;
+          }
+
+          reject(error);
         });
       });
     });
   },
 
-  fetchOauthData: function(options) {
+  _fetchOauthData: function(options) {
     return new Ember.RSVP.Promise(function(resolve, reject) {
       options.torii.open(options.provider).then(function(oauthData) {
-        resolve({
+        Ember.run(this, resolve, {
           grant_type: 'authorization_code',
           provider: oauthData.provider,
           code: oauthData.authorizationCode
         });
       }, function(error) {
-        reject(error);
+        Ember.run(this, reject, error);
       });
     });
   }

@@ -1,19 +1,24 @@
-<section class="leaderboard">
-  <header>
-    <h1>Leaderboard</h1>
+<header>
+  <h1>Leaderboard</h1>
 
-    <div class="filters">
-      <dl>
-        {{#link-to "leaderboard.weekly" tagName="dd"}}
-          <a>Weekly</a>
-        {{/link-to}}
+  <div class="filters">
+    <ul>
+      <li>
+        {{#link-to "leaderboard" "weekly"}}Weekly{{/link-to}}
+      </li>
 
-        {{#link-to "leaderboard.all-time" tagName="dd"}}
-          <a>All Time</a>
-        {{/link-to}}
-      </dl>
-    </div>
-  </header>
-</section>
+      <li>
+        {{#link-to "leaderboard" "all-time"}}All Time{{/link-to}}
+      </li>
+    </ul>
+  </div>
+</header>
 
-{{view "user-stats" content=controller pointsProperty="points" avatarUrlProperty="user.avatarUrl"}}
+<ul class="scores">
+  {{#each scores as |score|}}
+    {{as-user-performance
+      model=score.user
+      points=score.points
+      maxPoints=maxPoints}}
+  {{/each}}
+</ul>

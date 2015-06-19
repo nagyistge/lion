@@ -1,8 +1,7 @@
-import AuthenticatedRoute from './authenticated';
+import Ember from 'ember';
 
-export default AuthenticatedRoute.extend({
-  beforeModel: function(transition) {
-    this.transitionTo('leaderboard');
-    this._super(transition);
+export default Ember.Route.extend({
+  beforeModel: function() {
+    this.transitionTo('leaderboard', 'weekly');
   }
 });

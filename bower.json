@@ -14,9 +14,10 @@
     "qunit": "~1.17.1",
     "moment": "~2.7.0",
     "ember-simple-auth": "0.7.3",
-    "paint": "0.6.10",
+    "paint": "0.7.30",
     "spinjs": "2.0.1",
-    "tooltipster": "3.3.0"
+    "tooltipster": "3.3.0",
+    "ember-cli-moment-shim": "~0.2.0"
   },
   "resolutions": {
     "jquery": "^1.11.1"
