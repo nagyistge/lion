@@ -51,7 +51,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.apiBaseUrl = 'http://localhost:3000';
-    ENV.torii.providers['github-oauth2'].apiKey = '89b25efb23bf241601c0';
+    ENV.torii.providers['github-oauth2'].apiKey = 'c917120ff6a5a7f7de20';
   }
 
   if (environment === 'test') {
