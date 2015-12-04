@@ -1,5 +1,0 @@
-deployment:
-  production:
-    branch: master
-    commands:
-      - "git push --force git@heroku.com:as-lion.git HEAD:master"
