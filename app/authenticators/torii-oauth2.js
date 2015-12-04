@@ -1,52 +1,45 @@
 import Ember from 'ember';
-import OAuth2 from 'simple-auth-oauth2/authenticators/oauth2';
-import _ from 'npm:lodash';
+import config from 'lion/config/environment';
+import OAuth2PasswordGrantAuthenticator from 'ember-simple-auth/authenticators/oauth2-password-grant';
 
-export default OAuth2.extend({
-  authenticate: function(options) {
+export default OAuth2PasswordGrantAuthenticator.extend({
+  torii: Ember.inject.service(),
+  serverTokenEndpoint: config.serverTokenEndpoint,
+
+  authenticate(options) {
     return this._fetchOauthData(options).then(this._fetchAccessToken.bind(this));
   },
 
-  _fetchAccessToken: function(oauthCredentials) {
+  _fetchAccessToken(oauthCredentials) {
     return new Ember.RSVP.Promise((resolve, reject) => {
-      this.makeRequest(this.get('serverTokenEndpoint'), oauthCredentials).then((response) => {
+      const serverTokenEndpoint = this.get('serverTokenEndpoint');
+      this.makeRequest(serverTokenEndpoint, oauthCredentials).then((response) => {
         Ember.run(() => {
-          var expiresAt = this.absolutizeExpirationTime(response.expires_in);
-
-          this.scheduleAccessTokenRefresh(
-            response.expires_in,
-            expiresAt,
-            response.refresh_token
-          );
-
-          resolve(_({}).extend(response, { expires_at: expiresAt }));
-        });
-      }, function(xhr) {
-        Ember.run(() => {
-          var error;
-
-          if (xhr.responseJSON != null) {
-            error = xhr.responseJSON;
-          } else {
-            error = xhr.responseText;
+          const expiresAt = this._absolutizeExpirationTime(response['expires_in']);
+          this._scheduleAccessTokenRefresh(response['expires_in'], expiresAt, response['refresh_token']);
+          if (!Ember.isEmpty(expiresAt)) {
+            response = Ember.merge(response, { 'expires_at': expiresAt });
           }
-
-          reject(error);
+          resolve(response);
+        });
+      }, (xhr) => {
+        Ember.run(() => {
+          reject(xhr.responseJSON || xhr.responseText);
         });
       });
     });
   },
 
-  _fetchOauthData: function(options) {
-    return new Ember.RSVP.Promise(function(resolve, reject) {
-      options.torii.open(options.provider).then(function(oauthData) {
-        Ember.run(this, resolve, {
+  _fetchOauthData(options) {
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      this.get('torii').open(options).then((oauthData) => {
+        resolve({
           grant_type: 'authorization_code',
           provider: oauthData.provider,
           code: oauthData.authorizationCode
         });
-      }, function(error) {
-        Ember.run(this, reject, error);
+      }, (error) => {
+        reject(error);
       });
     });
   }

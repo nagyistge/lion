@@ -27,12 +27,6 @@ module.exports = function(environment) {
       }
     },
 
-    'simple-auth': {
-      authenticationRoute: 'session',
-      routeAfterAuthentication: 'index',
-      authorizer: 'simple-auth-authorizer:oauth2-bearer'
-    },
-
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-inline'",
@@ -76,11 +70,11 @@ module.exports = function(environment) {
     ENV.torii.providers['github-oauth2'].apiKey = 'ba034b2bee7fd39f2f04';
   }
 
-  ENV['simple-auth'].crossOriginWhitelist = [ENV.apiBaseUrl];
-
-  ENV['simple-auth-oauth2'] = {
-    serverTokenEndpoint: ENV.apiBaseUrl + '/api/tokens'
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'session'
   };
+
+  ENV['serverTokenEndpoint'] = ENV.apiBaseUrl + '/api/tokens';
 
   return ENV;
 };

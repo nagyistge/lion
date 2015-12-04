@@ -1,6 +1,13 @@
 import Ember from 'ember';
-import AuthenticationControllerMixin from 'simple-auth/mixins/authentication-controller-mixin';
 
-export default Ember.Controller.extend(AuthenticationControllerMixin, {
-  authenticator: 'authenticator:torii-oauth2'
+export default Ember.Controller.extend({
+  session: Ember.inject.service(),
+
+  actions: {
+    authenticateWithGithub(){
+      this.get('session').authenticate('authenticator:torii-oauth2', 'github-oauth2').catch((reason) => {
+        this.set('errorMessage', reason.error);
+      });
+    }
+  }
 });
