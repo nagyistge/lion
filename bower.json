@@ -8,16 +8,16 @@
     "ember-load-initializers": "0.1.7",
     "ember-qunit": "0.4.16",
     "ember-qunit-notifications": "0.1.0",
-    "ember-resolver": "~0.1.20",
+    "ember-resolver": "0.1.20",
     "jquery": "2.1.4",
     "loader.js": "ember-cli/loader.js#3.2.1",
-    "qunit": "~1.20.0",
-    "moment": ">= 2.8.0",
-    "moment-timezone": ">= 0.1.0",
-    "paint": "0.9.6",
-    "spinjs": "2.0.1",
+    "qunit": "1.20.0",
+    "moment": "2.8.0",
+    "moment-timezone": "0.1.0",
+    "spinjs": "2.0.2",
     "tooltipster": "3.3.0",
     "trackpad-scroll-emulator": "1.0.8",
-    "modernizr": "~3.2.0"
+    "paint": "0.9.5",
+    "modernizr": "2.8.3"
   }
 }
