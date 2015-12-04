@@ -71,6 +71,11 @@ module.exports = function(environment) {
     ENV.torii.providers['github-oauth2'].apiKey = '743d8bfa4937e587f1f4';
   }
 
+  if (environment === 'staging') {
+    ENV.apiBaseUrl = 'https://as-lion-api-staging.herokuapp.com';
+    ENV.torii.providers['github-oauth2'].apiKey = 'ba034b2bee7fd39f2f04';
+  }
+
   ENV['simple-auth'].crossOriginWhitelist = [ENV.apiBaseUrl];
 
   ENV['simple-auth-oauth2'] = {
