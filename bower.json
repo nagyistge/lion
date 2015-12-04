@@ -17,6 +17,7 @@
     "paint": "0.9.6",
     "spinjs": "2.0.1",
     "tooltipster": "3.3.0",
-    "trackpad-scroll-emulator": "1.0.8"
+    "trackpad-scroll-emulator": "1.0.8",
+    "modernizr": "~3.2.0"
   }
 }
