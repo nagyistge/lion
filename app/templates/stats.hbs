@@ -1,7 +1,36 @@
-<h1>Stats</h1>
+<div class="stats">
+  <header>
+    <h1>Stats</h1>
+  </header>
 
-<section class="pull-requests"></section>
-<section class="reviews"></section>
-<section class="additions"></section>
-<section class="deletions"></section>
-<section class="badges"></section>
+  <section class="pull-requests">
+    <h2>Pull Requests</h2>
+    {{#each pullRequestStats as |stat|}}
+      {{as-user-performance model=stat points=stat.pullRequestsCount}}
+    {{/each}}
+  </section>
+  <section class="reviews">
+    <h2>Reviews</h2>
+    {{#each reviewStats as |stat|}}
+      {{as-user-performance model=stat points=stat.pullRequestReviewsCount}}
+    {{/each}}
+  </section>
+  <section class="additions">
+    <h2>Additions</h2>
+    {{#each additionStats as |stat|}}
+      {{as-user-performance model=stat points=stat.numberOfAdditions}}
+    {{/each}}
+  </section>
+  <section class="deletions">
+    <h2>Deletions</h2>
+    {{#each deletionStats as |stat|}}
+      {{as-user-performance model=stat points=stat.numberOfDeletions}}
+    {{/each}}
+  </section>
+  <section class="badges">
+    <h2>Badges</h2>
+    {{#each badgeStats as |stat|}}
+      {{as-user-performance model=stat points=stat.badgesCount}}
+    {{/each}}
+  </section>
+</div>
