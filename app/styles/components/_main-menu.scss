@@ -1,0 +1,75 @@
+.main-menu {
+  background-color: color(link);
+  color: color(white);
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  height: navigation-settings(height);
+  padding: 0 0 0 $column-gutter;
+
+  img {
+    width: navigation-settings(height) / 1.5;
+    height: navigation-settings(height) / 1.5;
+  }
+
+  h2 {
+    flex: 1;
+    font-weight: bold;
+    margin-left: $column-gutter / 2;
+    font-size: $h2-font-size;
+    color: darken(color(link), 7%);
+  }
+
+  ul {
+    float: right;
+
+    li{
+      display: inline-block;
+      vertical-align: middle;
+      &.weekly a        { @include icon(calendar, before) }
+      &.all-time a      { @include icon(bar-chart, before) }
+      &.teams a         { @include icon(users, before) }
+      &.hall-of-fame a  { @include icon(trophy, before) }
+    }
+  }
+
+  a {
+    color: color(white);
+    margin: 0;
+    line-height: navigation-settings(height);
+    transition: background-color $global-transition-duration ease;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 $column-gutter / 1.2;
+
+    &:before {
+      color: darken(color(link), 7%);
+    }
+
+    &:hover {
+      color: darken(color(white), 7%);
+      background-color: darken(color(link), 1%);
+
+      &:before {
+        color: darken(color(link), 13%);
+      }
+    }
+
+    > span {
+      margin-left: $column-gutter / 3;
+    }
+  }
+
+  .logo {
+    .background {
+      fill: darken(color(link), 7%);
+    }
+  }
+
+  @media #{$medium-down} {
+    a > span{
+      display: none;
+    }
+  }
+}

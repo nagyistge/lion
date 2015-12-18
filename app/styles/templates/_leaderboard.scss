@@ -1,0 +1,81 @@
+$wrapper-max-width: 800px;
+
+.leaderboard {
+  padding: $column-gutter;
+  position: absolute;
+  top: $layout-sidebar-header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media #{$small-only} {
+    padding: $column-gutter / 2;
+
+    .nickname {
+      font-size: $h5-font-size;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: $h1-font-size;
+  }
+
+  .nickname {
+    float: left;
+    font-size: $h3-font-size;
+    margin-left: $column-gutter;
+    letter-spacing: 1px;
+  }
+
+  .scores {
+    max-width: $wrapper-max-width;
+    margin: 0 auto;
+
+
+    > * {
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+      border-bottom: 1px solid color(gray, ghost);
+      border-radius: $global-radius;
+      padding: $column-gutter / 2 $column-gutter;
+      transition:
+        background-color $global-transition-duration ease,
+        transform $global-transition-duration ease-in-out,
+        box-shadow $global-transition-duration ease;
+
+      &:last-child {
+        border: none;
+      }
+
+      &:hover {
+        background-color: color(border, light);
+        box-shadow: 0 2px 3px color(border);
+        transform: scale(1.1);
+      }
+
+      .avatar {
+        background-color: color(gray, smoke);
+        width: 3em;
+        border-radius: 50%;
+        height: 3em;
+        text-align: center;
+        overflow: hidden;
+        display: block;
+      }
+    }
+
+    .progress {
+      flex: 1;
+      text-align: right;
+
+      .points {
+        font-size: $h2-font-size;
+        font-weight: bold;
+      }
+    }
+  }
+}
