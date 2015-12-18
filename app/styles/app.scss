@@ -1,8 +1,45 @@
 @import 'paint-settings';
-@import 'bower_components/paint/paint';
+
+////
+/// Paint Global Imports
+////
+
+/// Import dependencies
+
+@import "bower_components/normalize-scss/normalize.scss";
+@import "bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+/// Import core paint and vendor resets
+
+@import 'bower_components/paint/globals/resets';
+@import 'bower_components/paint/globals/functions';
+@import 'bower_components/paint/components/color';
+@import 'bower_components/paint/globals/settings';
+@import 'bower_components/paint/globals/mixins';
+
+/// Import core vendor dependencies
+
+@import "bower_components/neat/app/assets/stylesheets/neat";
+@import 'bower_components/fontawesome/scss/variables';
+@import 'bower_components/fontawesome/scss/path';
+@import 'bower_components/fontawesome/scss/mixins';
+@import 'bower_components/fontawesome/scss/icons';
+
+/// Import base components
+
+@import 'bower_components/paint/components/icon';
+@import 'bower_components/paint/components/typography';
+@import 'bower_components/paint/components/button';
+@import 'bower_components/paint/components/grid';
+@import 'bower_components/paint/components/navigation';
+@import 'bower_components/paint/components/panel';
+
 
 @import 'settings';
 @import 'default';
 
+@import 'components/main-menu';
 @import 'templates/session';
+@import 'templates/leaderboard';
+
 

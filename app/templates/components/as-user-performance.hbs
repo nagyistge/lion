@@ -1,8 +1,11 @@
-<div class="avatar">
-  {{as-avatar model=model}}
-</div>
+{{#link-to leaderboard}}
+  <span class="avatar">
+    {{as-avatar model=model}}
+  </span>
+{{/link-to}}
 
 <div class="progress">
+  <a href={{model.githubUrl }} target="_blank"><span class="nickname">{{model.nickname}}</span></a>
   <span class="points">{{points}}</span>
   {{as-progress ratio=pointsRatio}}
 </div>

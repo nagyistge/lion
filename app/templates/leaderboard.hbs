@@ -1,24 +1,11 @@
 <header>
   <h1>Leaderboard</h1>
-
-  <div class="filters">
-    <ul>
-      <li>
-        {{#link-to "leaderboard" "weekly"}}Weekly{{/link-to}}
-      </li>
-
-      <li>
-        {{#link-to "leaderboard" "all-time"}}All Time{{/link-to}}
-      </li>
-    </ul>
-  </div>
 </header>
-
-<ul class="scores">
-  {{#each scores as |score|}}
+<div class="scores">
+  {{#each arrangedScores as |score|}}
     {{as-user-performance
       model=score.user
       points=score.points
       maxPoints=maxPoints}}
   {{/each}}
-</ul>
+</div>
