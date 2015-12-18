@@ -4,10 +4,7 @@
   </header>
   <div class="scores">
     {{#each arrangedScores as |score|}}
-      {{as-user-performance
-        model=score.user
-        points=score.points
-        maxPoints=maxPoints}}
+      {{as-user-performance model=score.user points=score.points}}
     {{/each}}
   </div>
 </div>
