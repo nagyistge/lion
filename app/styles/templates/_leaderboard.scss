@@ -1,4 +1,5 @@
-$wrapper-max-width: 800px;
+$wrapper-max-width: 1200px;
+$avatar-size: 40px;
 
 .leaderboard {
   padding: $column-gutter;
@@ -23,22 +24,27 @@ $wrapper-max-width: 800px;
     font-size: $h1-font-size;
   }
 
+  h3 {
+    text-align: center;
+    margin-bottom: $column-gutter;
+  }
+
   .nickname {
     float: left;
     font-size: $h3-font-size;
-    margin-left: $column-gutter;
     letter-spacing: 1px;
+    flex: 1;
   }
 
   .scores {
     max-width: $wrapper-max-width;
     margin: 0 auto;
 
-
     > * {
       display: inline-flex;
       width: 100%;
       align-items: center;
+      justify-content: space-between;
       border-bottom: 1px solid color(gray, ghost);
       border-radius: $global-radius;
       padding: $column-gutter / 2 $column-gutter;
@@ -46,6 +52,53 @@ $wrapper-max-width: 800px;
         background-color $global-transition-duration ease,
         transform $global-transition-duration ease-in-out,
         box-shadow $global-transition-duration ease;
+
+      &:nth-child(-n+5) {
+        width: 20%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        float: left;
+        padding: $column-gutter 0;
+        box-shadow: 0 2px 3px color(border);
+        background-color: lighten(color(link, light), 40%);
+        box-shadow: 0 2px 3px lighten(color(link, light), 40%);
+        border: none;
+
+        &:hover {
+          background-color: lighten(color(link, light), 40%);
+          box-shadow: 0 2px 3px color(link, light);
+        }
+
+        &:before {
+          border-radius: 50%;
+          background-color: color(link);
+          color: color(white);
+          width: $avatar-size;
+          height: $avatar-size;
+          line-height: $avatar-size;
+          text-align: center;
+          margin-top: -$avatar-size;
+          margin-bottom: $column-gutter;
+          box-shadow: 0 0 3px color(link);
+        }
+
+        .avatar {
+          box-shadow: 0 0 7px color(link);
+          width: $avatar-size * 2;
+          height: $avatar-size * 2;
+        }
+
+        @media #{$small-only} {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(1):before { content: '1' }
+      &:nth-child(2):before { content: '2' }
+      &:nth-child(3):before { content: '3' }
+      &:nth-child(4):before { content: '4' }
+      &:nth-child(5):before { content: '5' }
 
       &:last-child {
         border: none;
@@ -68,14 +121,11 @@ $wrapper-max-width: 800px;
       }
     }
 
-    .progress {
-      flex: 1;
-      text-align: right;
-
-      .points {
-        font-size: $h2-font-size;
-        font-weight: bold;
-      }
+    .points {
+      font-size: $h2-font-size;
+      float: right;
+      font-weight: $font-weight-bold;
+      color: color(gray, jet);
     }
   }
 }
