@@ -27,8 +27,7 @@
     li{
       display: inline-block;
       vertical-align: middle;
-      &.weekly a        { @include icon(calendar, before) }
-      &.all-time a      { @include icon(bar-chart, before) }
+      &.chart a      { @include icon(bar-chart, before) }
       &.teams a         { @include icon(users, before) }
       &.hall-of-fame a  { @include icon(trophy, before) }
     }
