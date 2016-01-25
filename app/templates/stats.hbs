@@ -1,36 +1,25 @@
-<div class="stats">
+<div class="leaderboard">
   <header>
     <h1>Stats</h1>
   </header>
+  <section class="filters">
+    <nav>
+      <ul>
+        <li>{{#link-to "stats" "pull_requests"}}<span>Pull Requests</span>{{/link-to}}</li>
+        <li>{{#link-to "stats" "reviews"}}<span>Reviews</span>{{/link-to}}</li>
+        <li>{{#link-to "stats" "additions"}}<span>Additions</span>{{/link-to}}</li>
+        <li>{{#link-to "stats" "deletions"}}<span>Deletions</span>{{/link-to}}</li>
+        <li>{{#link-to "stats" "badges"}}<span>Badges</span>{{/link-to}}</li>
+      </ul>
+    </nav>
 
-  <section class="pull-requests">
-    <h2>Pull Requests</h2>
-    {{#each pullRequestStats as |stat|}}
-      {{as-user-performance model=stat points=stat.pullRequestsCount}}
-    {{/each}}
-  </section>
-  <section class="reviews">
-    <h2>Reviews</h2>
-    {{#each reviewStats as |stat|}}
-      {{as-user-performance model=stat points=stat.pullRequestReviewsCount}}
-    {{/each}}
-  </section>
-  <section class="additions">
-    <h2>Additions</h2>
-    {{#each additionStats as |stat|}}
-      {{as-user-performance model=stat points=stat.numberOfAdditions}}
-    {{/each}}
-  </section>
-  <section class="deletions">
-    <h2>Deletions</h2>
-    {{#each deletionStats as |stat|}}
-      {{as-user-performance model=stat points=stat.numberOfDeletions}}
-    {{/each}}
-  </section>
-  <section class="badges">
-    <h2>Badges</h2>
-    {{#each badgeStats as |stat|}}
-      {{as-user-performance model=stat points=stat.badgesCount}}
-    {{/each}}
+    <div class="content">
+      <h3>Top 5</h3>
+      <div class="scores">
+        {{#each categoryStats as |stat|}}
+          {{as-user-performance model=stat points=stat.count}}
+        {{/each}}
+      </div>
+    </div>
   </section>
 </div>
