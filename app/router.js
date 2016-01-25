@@ -10,7 +10,7 @@ Router.map(function() {
     this.resource('index', { path: '/' });
     this.resource('leaderboard', { path: '/leaderboard/:time_span' });
     this.resource('hall-of-fame');
-    this.resource('stats');
+    this.resource('stats', { path: '/stats/:category' });
   });
 
   this.route('session');

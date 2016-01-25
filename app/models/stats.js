@@ -5,9 +5,5 @@ import User from './user';
 Ember.Inflector.inflector.uncountable('stats');
 
 export default User.extend({
-  pullRequestsCount: DS.attr('number'),
-  numberOfAdditions: DS.attr('number'),
-  numberOfDeletions: DS.attr('number'),
-  pullRequestReviewsCount: DS.attr('number'),
-  badgesCount: DS.attr('number')
+  count: DS.attr('number')
 });
