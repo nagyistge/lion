@@ -6,7 +6,7 @@
   <div class="weekly-winners">
     {{#each weeklyWinnings as |weeklyWinning|}}
       <div class="details">
-        <span class="date">{{moment-format weeklyWinning.startDate "MMMM Do YY"}}</span>
+        <span class="date">{{moment-format weeklyWinning.startDate "MMMM Do YYYY"}}</span>
         {{as-user-performance model=weeklyWinning.winner points=weeklyWinning.points}}
       </div>
     {{/each}}
