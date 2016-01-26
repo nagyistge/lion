@@ -1,0 +1,95 @@
+$wrapper-max-width: 1200px;
+$avatar-size: 160px;
+
+.hall-of-fame {
+  padding: $column-gutter;
+  position: absolute;
+  top: $layout-sidebar-header-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media #{$small-only} {
+    padding: $column-gutter / 2;
+
+    .nickname {
+      font-size: $h5-font-size;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: $h1-font-size;
+  }
+
+  .nickname {
+    float: left;
+    font-size: $h3-font-size;
+    letter-spacing: 1px;
+    flex: 1;
+    width: 100%;
+  }
+
+  .weekly-winners {
+    max-width: $wrapper-max-width;
+    margin: 0 auto;
+    text-align: center;
+
+    .date {
+      font-size: $base-font-size;
+      font-weight: $font-weight-bold;
+      color: color(gray, jet);
+      padding-bottom: $column-gutter / 2;
+    }
+
+    .details {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      float: left;
+      padding: $column-gutter 0;
+      background-color: lighten(color(link, light), 40%);
+      box-shadow: 0 2px 3px lighten(color(link, light), 40%);
+      border: none;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: $global-radius;
+      margin: $column-gutter;
+      transition:
+        background-color $global-transition-duration ease,
+        transform $global-transition-duration ease-in-out,
+        box-shadow $global-transition-duration ease;
+
+      &:hover {
+        background-color: lighten(color(link, light), 40%);
+        box-shadow: 0 2px 3px color(link, light);
+        transform: scale(1.1);
+      }
+
+      .avatar {
+        box-shadow: 0 0 7px color(link);
+        width: $avatar-size;
+        height: $avatar-size;
+        background-color: color(gray, smoke);
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        display: block;
+      }
+
+      @media #{$small-only} {
+        width: 100%;
+      }
+    }
+
+    .points {
+      font-size: $h2-font-size;
+      float: right;
+      font-weight: $font-weight-bold;
+      color: color(gray, jet);
+      width: 100%;
+    }
+  }
+}
