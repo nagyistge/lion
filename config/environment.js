@@ -45,7 +45,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.apiBaseUrl = 'http://localhost:3000';
-    ENV.torii.providers['github-oauth2'].apiKey = 'c917120ff6a5a7f7de20';
+    ENV.torii.providers['github-oauth2'].apiKey = '89b25efb23bf241601c0';
   }
 
   if (environment === 'test') {
@@ -67,7 +67,7 @@ module.exports = function(environment) {
 
   if (environment === 'staging') {
     ENV.apiBaseUrl = 'https://as-lion-api-staging.herokuapp.com';
-    ENV.torii.providers['github-oauth2'].apiKey = 'ba034b2bee7fd39f2f04';
+    ENV.torii.providers['github-oauth2'].apiKey = 'b332ff88f7abf9bcdff5';
   }
 
   ENV['ember-simple-auth'] = {
