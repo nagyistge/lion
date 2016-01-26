@@ -3,20 +3,12 @@
     <h1>Hall of Fame</h1>
   </header>
 
-  <ul class="weekly-winners">
+  <div class="weekly-winners">
     {{#each weeklyWinnings as |weeklyWinning|}}
-      <li>
-        <div>
-          <div class="avatar">
-            {{as-avatar model=weeklyWinning.winner}}
-          </div>
-
-          <div class="details">
-            <span class="date">{{moment-format weeklyWinning.startDate "MMMM Do YY"}}</span>
-            <span class="points">{{weeklyWinning.points}}</span>
-          </div>
-        </div>
-      </li>
+      <div class="details">
+        <span class="date">{{moment-format weeklyWinning.startDate "MMMM Do YY"}}</span>
+        {{as-user-performance model=weeklyWinning.winner points=weeklyWinning.points}}
+      </div>
     {{/each}}
-  </ul>
+  </div>
 </div>
