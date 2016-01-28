@@ -22,7 +22,7 @@ module.exports = function(environment) {
     torii: {
       providers: {
         'github-oauth2': {
-          scope: 'user:email,read:org'
+          scope: 'user:email,read:org,repo'
         }
       }
     },
