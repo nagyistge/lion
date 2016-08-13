@@ -4,8 +4,7 @@
     "document",
     "window",
     "-Promise",
-    "LionENV",
-    "moment"
+    "LionENV"
   ],
   "browser": true,
   "boss": true,
