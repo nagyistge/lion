@@ -71,11 +71,5 @@ module.exports = function(environment) {
     ENV.torii.providers['github-oauth2'].apiKey = 'b332ff88f7abf9bcdff5';
   }
 
-  ENV['ember-simple-auth'] = {
-    authenticationRoute: 'session'
-  };
-
-  ENV['serverTokenEndpoint'] = ENV.apiBaseUrl + '/api/tokens';
-
   return ENV;
 };

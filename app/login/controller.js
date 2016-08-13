@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   session: Ember.inject.service(),
 
   actions: {
-    authenticateWithGithub(){
+    authenticateWithGithub() {
       this.get('session').authenticate('authenticator:oauth2', 'github-oauth2').catch((reason) => {
         this.set('errorMessage', reason.error);
       });

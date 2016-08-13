@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import config from './config/environment';
+import config from 'lion/config/environment';
 
 const Router = Ember.Router.extend({
   location: config.locationType
@@ -12,7 +12,7 @@ Router.map(function() {
     this.route('stats', { path: 'stats/:category', resetNamespace: true });
   });
 
-  this.route('session');
+  this.route('login');
 });
 
 export default Router;

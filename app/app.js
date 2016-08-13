@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import Resolver from './resolver';
+import Resolver from 'lion/resolver';
 import loadInitializers from 'ember-load-initializers';
-import config from './config/environment';
+import config from 'lion/config/environment';
 
 let App;
 
