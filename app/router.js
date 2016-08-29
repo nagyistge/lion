@@ -1,16 +1,16 @@
 import Ember from 'ember';
 import config from './config/environment';
 
-var Router = Ember.Router.extend({
+const Router = Ember.Router.extend({
   location: config.locationType
 });
 
 Router.map(function() {
-  this.route('authenticated', { path: '' }, function() {
-    this.resource('index', { path: '/' });
-    this.resource('leaderboard', { path: '/leaderboard/:time_span' });
-    this.resource('hall-of-fame');
-    this.resource('stats', { path: '/stats/:category' });
+  this.route('authenticated', function() {
+    this.route('index', { path: '/', resetNamespace: true });
+    this.route('leaderboard', { path: '/leaderboard/:time_span', resetNamespace: true });
+    this.route('hall-of-fame', { resetNamespace: true });
+    this.route('stats', { path: '/stats/:category', resetNamespace: true });
   });
 
   this.route('session');
