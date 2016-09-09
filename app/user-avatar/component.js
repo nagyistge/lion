@@ -2,7 +2,7 @@ import Ember from 'ember';
 import TooltipsterComponent from 'ember-cli-tooltipster/components/tool-tipster';
 
 export default TooltipsterComponent.extend({
-  classNameBindings: [':as-avatar'],
+  classNameBindings: [':user-avatar'],
   attributeBindings: ['src', 'alt', 'title'],
   tagName: 'img',
 
