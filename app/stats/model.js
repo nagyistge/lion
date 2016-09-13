@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import DS from 'ember-data';
-import User from './user';
+import User from 'lion/user/model';
 
 Ember.Inflector.inflector.uncountable('stats');
 

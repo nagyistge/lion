@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'lion',
+    podModulePrefix: 'lion',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
