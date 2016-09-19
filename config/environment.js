@@ -45,7 +45,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.apiBaseUrl = 'http://localhost:3000';
+    ENV.apiBaseUrl = 'http://localhost:3000/api/graph';
+    ENV.apiAuthUrl = 'http://localhost:3000/api/auth';
     ENV.torii.providers['github-oauth2'].apiKey = '89b25efb23bf241601c0';
   }
 
@@ -62,12 +63,14 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apiBaseUrl = 'https://as-lion-api.herokuapp.com';
+    ENV.apiBaseUrl = 'https://as-lion-api.herokuapp.com/api/graph';
+    ENV.apiAuthUrl = 'https://as-lion-api.herokuapp.com/api/auth';
     ENV.torii.providers['github-oauth2'].apiKey = '743d8bfa4937e587f1f4';
   }
 
   if (environment === 'staging') {
-    ENV.apiBaseUrl = 'https://as-lion-api-staging.herokuapp.com';
+    ENV.apiBaseUrl = 'https://as-lion-api-staging.herokuapp.com/api/graph';
+    ENV.apiAuthUrl = 'https://as-lion-api-staging.herokuapp.com/api/auth';
     ENV.torii.providers['github-oauth2'].apiKey = 'b332ff88f7abf9bcdff5';
   }
 

@@ -19,11 +19,11 @@ export default Authenticator.extend({
         const expiresAt = this._absolutizeExpirationTime(expiresIn);
         this._scheduleAccessTokenRefresh(expiresIn, expiresAt);
         if (!Ember.isEmpty(expiresAt)) {
-          data = Ember.merge(data, {
+          data = {
             'access_token': accessToken,
             'expires_at': expiresAt,
             'expires_in': expiresIn
-          });
+          };
         }
 
         return RSVP.Promise.resolve(data);
@@ -37,7 +37,9 @@ export default Authenticator.extend({
     return new RSVP.Promise((resolve, reject) => {
       get(this, 'torii').open(provider).then(oauthData => {
         resolve(oauthData.authorizationCode);
-      }).catch(error => { reject(error); });
+      }).catch(error => {
+        reject(error);
+      });
     });
   }
 });
