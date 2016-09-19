@@ -1,44 +1,43 @@
 import Ember from 'ember';
-import config from 'lion/config/environment';
-import OAuth2PasswordGrantAuthenticator from 'ember-simple-auth/authenticators/oauth2-password-grant';
+import Authenticator from 'ember-simple-auth/authenticators/oauth2-password-grant';
 
-export default OAuth2PasswordGrantAuthenticator.extend({
-  torii: Ember.inject.service(),
-  serverTokenEndpoint: config.serverTokenEndpoint,
+const { get, inject, RSVP } = Ember;
 
-  authenticate(options) {
-    return this._fetchOauthData(options).then(this._fetchAccessToken.bind(this));
-  },
+export default Authenticator.extend({
+  store: inject.service(),
+  torii: inject.service(),
 
-  _fetchAccessToken(oauthCredentials) {
-    return new Ember.RSVP.Promise((resolve, reject) => {
-      const serverTokenEndpoint = this.get('serverTokenEndpoint');
-      this.makeRequest(serverTokenEndpoint, oauthCredentials).then((response) => {
-        Ember.run(() => {
-          const expiresAt = this._absolutizeExpirationTime(response['expires_in']);
-          this._scheduleAccessTokenRefresh(response['expires_in'], expiresAt, response['refresh_token']);
-          if (!Ember.isEmpty(expiresAt)) {
-            response = Ember.merge(response, { 'expires_at': expiresAt });
-          }
-          resolve(response);
-        });
-      }, (xhr) => {
-        Ember.run(() => {
-          reject(xhr.responseJSON || xhr.responseText);
-        });
+  refreshAccessTokens: false,
+
+  authenticate(provider) {
+    return this._fetchOauthData(provider).then(code => {
+      let token = get(this, 'store').createRecord('token', { code });
+      return token.save().then(response => {
+        let data = {};
+        const accessToken = get(response, 'accessToken');
+        const expiresIn = get(response, 'expiresIn');
+        const expiresAt = this._absolutizeExpirationTime(expiresIn);
+        this._scheduleAccessTokenRefresh(expiresIn, expiresAt);
+        if (!Ember.isEmpty(expiresAt)) {
+          data = {
+            'access_token': accessToken,
+            'expires_at': expiresAt,
+            'expires_in': expiresIn
+          };
+        }
+
+        return RSVP.Promise.resolve(data);
+      }).catch(error => {
+        return RSVP.Promise.reject(error);
       });
     });
   },
 
-  _fetchOauthData(options) {
-    return new Ember.RSVP.Promise((resolve, reject) => {
-      this.get('torii').open(options).then((oauthData) => {
-        resolve({
-          grant_type: 'authorization_code',
-          provider: oauthData.provider,
-          code: oauthData.authorizationCode
-        });
-      }, (error) => {
+  _fetchOauthData(provider) {
+    return new RSVP.Promise((resolve, reject) => {
+      get(this, 'torii').open(provider).then(oauthData => {
+        resolve(oauthData.authorizationCode);
+      }).catch(error => {
         reject(error);
       });
     });

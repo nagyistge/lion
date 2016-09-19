@@ -16,7 +16,7 @@
       <h3>Top 5</h3>
       <div class="scores">
         {{#each categoryStats as |stat|}}
-          {{user-performance model=stat points=stat.count}}
+          {{user-performance model=stat.user points=stat.count}}
         {{/each}}
       </div>
     </div>
