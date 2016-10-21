@@ -29,12 +29,12 @@ Before running the server make sure you have [lion-api](https://github.com/alpha
 
 ## Leaderboard
 
-![leaderboard](http://gdurl.com/hG1o)
+![leaderboard](readme/leaderboard.png)
 
 ## Hall of Fame
 
-![hall-of-fame](http://gdurl.com/CgQN)
+![hall-of-fame](readme/hof.png)
 
 ## Stats
 
-![stats](http://gdurl.com/KodR)
+![stats](readme/stats.png)
