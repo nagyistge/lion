@@ -29,12 +29,12 @@ Before running the server make sure you have [lion-api](https://github.com/alpha
 
 ## Leaderboard
 
-![leaderboard](readme/leaderboard.png)
+![leaderboard](public/assets/images/readme/leaderboard.png)
 
 ## Hall of Fame
 
-![hall-of-fame](readme/hof.png)
+![hall-of-fame](public/assets/images/readme/hof.png)
 
 ## Stats
 
-![stats](readme/stats.png)
+![stats](public/assets/images/readme/stats.png)
