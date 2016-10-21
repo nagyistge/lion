@@ -13,6 +13,8 @@ This is the web client. [Here](https://github.com/alphasights/lion-api) you can 
 
 ## Running
 
+Before running the server make sure you have [lion-api](https://github.com/alphasights/lion-api) running in a separate terminal on `localhost:3000`. You can run the lion-api server with `rails server`.
+
 * `ember server`
 * Visit your app at http://localhost:4200.
 
@@ -27,12 +29,12 @@ This is the web client. [Here](https://github.com/alphasights/lion-api) you can 
 
 ## Leaderboard
 
-![leaderboard](http://cl.ly/image/033t1x3t041b/leaderboard.png)
+![leaderboard](public/assets/images/readme/leaderboard.png)
 
 ## Hall of Fame
 
-![hall-of-fame](http://cl.ly/image/020f0o420b2i/hall-of-fame.png)
+![hall-of-fame](public/assets/images/readme/hof.png)
 
 ## Stats
 
-![stats](http://cl.ly/image/3R3W2e2c0Y2p/stats.png)
+![stats](public/assets/images/readme/stats.png)
