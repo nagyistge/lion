@@ -7,6 +7,21 @@ This is the web client. [Here](https://github.com/alphasights/lion-api) you can 
 
 ## Installation
 
+#### Prerequisites
+
+You will need the following things properly installed on your computer.
+
+```bash
+
+# Install with Homebrew
+$ brew install node
+
+# Bower and ember-cli
+$ npm install -g bower ember-cli
+```
+
+### Setup
+
 * `git clone` this repository
 * `npm install`
 * `bower install`
