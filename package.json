@@ -31,7 +31,7 @@
     "ember-cli-inject-live-reload": "1.4.0",
     "ember-cli-moment-shim": "2.0.0",
     "ember-cli-paint": "1.13.7",
-    "ember-cli-qunit": "1.4.0",
+    "ember-cli-qunit": "3.0.4",
     "ember-cli-release": "0.2.8",
     "ember-cli-sri": "2.1.0",
     "ember-cli-tooltipster": "0.4.5",
