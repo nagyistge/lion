@@ -30,7 +30,7 @@
     "ember-cli-ic-ajax": "0.2.5",
     "ember-cli-inject-live-reload": "1.4.0",
     "ember-cli-moment-shim": "2.0.0",
-    "ember-cli-paint": "1.13.7",
+    "ember-cli-paint": "1.13.12",
     "ember-cli-qunit": "1.4.0",
     "ember-cli-release": "0.2.8",
     "ember-cli-sri": "2.1.0",
