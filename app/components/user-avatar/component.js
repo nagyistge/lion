@@ -1,14 +1,16 @@
 import Ember from 'ember';
 import TooltipsterComponent from 'ember-cli-tooltipster/components/tool-tipster';
 
+const { computed } = Ember;
+
 export default TooltipsterComponent.extend({
-  classNameBindings: [':user-avatar'],
   attributeBindings: ['src', 'alt', 'title'],
+  classNameBindings: [':user-avatar'],
   tagName: 'img',
 
-  alt: Ember.computed.oneWay('title'),
-  position: 'top',
-  src: Ember.computed.oneWay('model.avatarUrl'),
-  title: Ember.computed.oneWay('model.name'),
-  model: null
+  user: null,
+
+  alt: computed.oneWay('title'),
+  src: computed.oneWay('user.avatarUrl'),
+  title: computed.oneWay('user.name'),
 });

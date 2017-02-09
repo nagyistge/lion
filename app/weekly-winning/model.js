@@ -1,7 +1,10 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  startDate: DS.attr('date'),
-  winner: DS.belongsTo('user', { async: true }),
-  points: DS.attr('number')
+const { attr, belongsTo, Model } = DS;
+
+export default Model.extend({
+  startDate: attr('date'),
+  points: attr('number'),
+
+  winner: belongsTo('user', { async: true })
 });

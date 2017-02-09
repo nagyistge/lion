@@ -7,7 +7,7 @@
     {{#each model as |weeklyWinning|}}
       <div class="details">
         <span class="date">{{moment-format weeklyWinning.startDate "MMMM Do YYYY"}}</span>
-        {{user-performance model=weeklyWinning.winner points=weeklyWinning.points}}
+        {{user-performance user=weeklyWinning.winner points=weeklyWinning.points}}
       </div>
     {{/each}}
   </div>

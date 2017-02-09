@@ -1,9 +1,11 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  accessToken: DS.attr('string'),
-  code: DS.attr('string'),
-  expiresIn: DS.attr('number'),
+const { attr, belongsTo, Model } = DS;
 
-  user: DS.belongsTo('user', { async: true })
+export default Model.extend({
+  accessToken: attr('string'),
+  code: attr('string'),
+  expiresIn: attr('number'),
+
+  user: belongsTo('user', { async: true })
 });

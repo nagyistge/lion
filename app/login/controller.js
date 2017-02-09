@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service(),
+const { Controller, get, inject } = Ember;
+
+export default Controller.extend({
+  session: inject.service(),
 
   actions: {
     authenticateWithGithub() {
-      this.get('session').authenticate('authenticator:oauth2', 'github-oauth2').catch((reason) => {
-        this.set('errorMessage', reason.error);
-      });
+      get(this, 'session').authenticate('authenticator:oauth2', 'github-oauth2');
     }
   }
 });

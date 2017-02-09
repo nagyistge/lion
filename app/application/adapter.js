@@ -1,8 +1,17 @@
+import Ember from 'ember';
 import config from 'lion/config/environment';
+import { Adapter } from 'ember-graphql-adapter';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
-import GraphAdapter from 'lion/graph/adapter';
 
-export default GraphAdapter.extend(DataAdapterMixin, {
+const { String: { underscore } } = Ember;
+
+export default Adapter.extend(DataAdapterMixin, {
   authorizer: 'authorizer:oauth2',
-  endpoint: config.apiBaseUrl
+  coalesceFindRequests: true,
+  endpoint: config.apiBaseUrl,
+  httpMethod: 'POST',
+
+  normalizeCase(string) {
+    return underscore(string);
+  }
 });
