@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { get, Route, set } = Ember;
+
+export default Route.extend({
   model({ time_span }) {
-    return this.store.query('score', { time_span });
+    return get(this, 'store').query('score', { time_span });
   },
 
   setupController(controller, model) {
-    controller.set('scores', model);
+    set(controller, 'scores', model);
   }
 });

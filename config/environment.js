@@ -3,15 +3,18 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'lion',
-    podModulePrefix: 'lion',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
 
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false
       }
     },
 
@@ -29,13 +32,11 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline'",
-      'font-src': "'self'",
-      'connect-src': "'self' localhost:3000 as-lion-api.herokuapp.com",
-      'img-src': "'self' avatars.githubusercontent.com",
-      'style-src': "'self' 'unsafe-inline'",
-      'media-src': "'self'"
+      'script-src':  ["'self'"],
+      'font-src':    ["'self'", "data:", "https://fonts.gstatic.com"],
+      'connect-src': ["'self'", "http://localhost:3000", "https://as-lion-api.herokuapp.com", "https://as-lion-api-staging.herokuapp.com"],
+      'img-src':     ["'self'", "https://avatars.githubusercontent.com"],
+      'style-src':   ["'self'", "'unsafe-inline'", "https://use.fonticons.com"],
     }
   };
 
@@ -52,7 +53,6 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -60,6 +60,9 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.apiBaseUrl = '/api/graph';
+    ENV.apiAuthUrl = '/api/auth';
   }
 
   if (environment === 'production') {

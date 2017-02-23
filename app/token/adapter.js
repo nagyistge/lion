@@ -1,6 +1,6 @@
 import config from 'lion/config/environment';
-import GraphAdapter from 'lion/graph/adapter';
+import Adapter from 'lion/application/adapter';
 
-export default GraphAdapter.extend({
+export default Adapter.extend({
   endpoint: config.apiAuthUrl
 });

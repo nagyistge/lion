@@ -1,12 +1,15 @@
-import DS from 'ember-data';
 import Ember from 'ember';
+import DS from 'ember-data';
 
-export default DS.Model.extend({
-  avatarUrl: DS.attr('string'),
-  name: DS.attr('string'),
-  nickname: DS.attr('string'),
+const { computed, get } = Ember;
+const { attr, Model } = DS;
 
-  githubUrl: Ember.computed('nickname', function() {
-    return `https://github.com/${this.get('nickname')}`;
+export default Model.extend({
+  avatarUrl: attr('string'),
+  name: attr('string'),
+  nickname: attr('string'),
+
+  githubUrl: computed('nickname', function() {
+    return `https://github.com/${get(this, 'nickname')}`;
   })
 });

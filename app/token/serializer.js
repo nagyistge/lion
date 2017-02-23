@@ -1,5 +1,6 @@
-import Serializer from 'lion/graph/serializer';
+import Serializer from 'lion/application/serializer';
 
 export default Serializer.extend({
-  attributesExcludedFromSerialization: ['accessToken']
+  attributesExcludedFromSerialization: ['accessToken'],
+  belongsToExcludedFromSerialization: ['user']
 });

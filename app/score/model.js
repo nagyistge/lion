@@ -1,6 +1,8 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  points: DS.attr('number'),
-  user: DS.belongsTo('user', { async: false })
+const { attr, belongsTo, Model } = DS;
+
+export default Model.extend({
+  points: attr('number'),
+  user: belongsTo('user', { async: false })
 });

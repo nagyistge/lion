@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { get, Route } = Ember;
+
+export default Route.extend({
   model({ category }) {
-    return this.store.query('stats', { category });
+    return get(this, 'store').query('stats', { category });
   }
 });

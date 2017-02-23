@@ -1,9 +1,11 @@
-import Ember from 'ember';
 import DS from 'ember-data';
+import Ember from 'ember';
+
+const { attr, belongsTo, Model } = DS;
 
 Ember.Inflector.inflector.uncountable('stats');
 
-export default DS.Model.extend({
-  count: DS.attr('number'),
-  user: DS.belongsTo('user', { async: true })
+export default Model.extend({
+  count: attr('number'),
+  user: belongsTo('user', { async: true })
 });

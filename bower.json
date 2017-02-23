@@ -1,16 +1,10 @@
 {
   "name": "lion",
   "dependencies": {
-    "ember": "2.4.3",
-    "ember-cli-shims": "0.1.1",
-    "ember-cli-test-loader": "0.2.2",
-    "ember-qunit-notifications": "0.1.0",
-    "ember-resolver": "0.1.20",
-    "jquery": "2.1.4",
-    "spinjs": "2.3.2",
-    "tooltipster": "4.0.6",
-    "trackpad-scroll-emulator": "1.0.8",
+    "tooltipster": "4.1.7",
     "paint": "0.9.5",
-    "modernizr": "2.8.3"
+    "modernizr": "2.8.3",
+    "spinjs": "2.3.2",
+    "trackpad-scroll-emulator": "1.0.8"
   }
 }
