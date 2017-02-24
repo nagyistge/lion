@@ -1,5 +1,7 @@
 # Lion
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/alphasights/lion.svg)](https://greenkeeper.io/)
+
 Lion is a dashboard for developers written with Ember and Rails.
 It rewards developers when they get shit done®.
 
