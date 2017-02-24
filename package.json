@@ -44,7 +44,7 @@
     "ember-resolver": "2.1.1",
     "ember-simple-auth": "1.2.0",
     "ember-source": "2.11.2",
-    "loader.js": "4.1.0",
+    "loader.js": "4.2.2",
     "torii": "0.8.1"
   },
   "engines": {
